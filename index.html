@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Les 12 Grandes Lois de l’Univers</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Font Awesome pour les icônes -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+  <style>
+    body {
+      background: linear-gradient(135deg, #1e3c72, #2a5298);
+      color: #fff;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      overflow-x: hidden;
+    }
+    .navbar {
+      background: rgba(0, 0, 0, 0.8);
+      backdrop-filter: blur(10px);
+    }
+    .hero-section {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      background: url('https://source.unsplash.com/random/1920x1080?cosmos') no-repeat center center/cover;
+      position: relative;
+    }
+    .hero-section::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+    }
+    .hero-content {
+      position: relative;
+      z-index: 1;
+    }
+    .card {
+      background: rgba(255, 255, 255, 0.1);
+      border: none;
+      backdrop-filter: blur(10px);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    }
+    .law-title {
+      font-size: 1.8rem;
+      font-weight: bold;
+      color: #ffd700;
+    }
+    .law-icon {
+      font-size: 3rem;
+      color: #ffd700;
+      margin-bottom: 1rem;
+    }
+    .quote-section {
+      background: #2a5298;
+      padding: 3rem 0;
+      text-align: center;
+    }
+    .download-btn {
+      background: #ffd700;
+      color: #1e3c72;
+      font-weight: bold;
+      border: none;
+      padding: 0.8rem 2rem;
+      border-radius: 50px;
+      transition: background 0.3s ease;
+    }
+    .download-btn:hover {
+      background: #e6c200;
+    }
+    .modal-content {
+      background: rgba(255, 255, 255, 0.9);
+      color: #1e3c72;
+    }
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(50px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    .animate-fadeInUp {
+      animation: fadeInUp 1s ease-out forwards;
+    }
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg fixed-top">
+    <div class="container">
+      <a class="navbar-brand text-white" href="#">🌌 Les 12 Lois de l’Univers</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link text-white" href="#laws">Les Lois</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white" href="#quote">Citation</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white" href="#download">Télécharger</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="hero-content">
+      <h1 class="display-3 fw-bold animate-fadeInUp">Les 12 Grandes Lois de l’Univers</h1>
+      <p class="lead animate-fadeInUp" style="animation-delay: 0.3s;">
+        Découvrez les principes spirituels, universels et naturels qui régissent la création, l’énergie et la vie.
+      </p>
+      <a href="#laws" class="btn download-btn mt-3 animate-fadeInUp" style="animation-delay: 0.6s;">Explorer les Lois</a>
+    </div>
+  </section>
+
+  <!-- Laws Section -->
+  <section id="laws" class="py-5">
+    <div class="container">
+      <h2 class="text-center mb-5">Les 12 Lois Universelles</h2>
+      <div class="row g-4">
+        <!-- Loi 1 -->
+        <div class="col-md-6 col-lg-4">
+          <div class="card text-white p-4">
+            <i class="fas fa-lightbulb law-icon"></i>
+            <h3 class="law-title">1. Loi de l’Intention (Niyyah)</h3>
+            <p>Tout commence par une intention claire. Elle oriente l’énergie et les résultats. <br><strong>Hadith :</strong> <em>“Les actes ne valent que par leurs intentions.”</em></p>
+            <p><strong>Application :</strong> Définissez une intention pure avant chaque action (prière, travail, relations).</p>
+          </div>
+        </div>
+        <!-- Loi 2 -->
+        <div class="col-md-6 col-lg-4">
+          <div class="card text-white p-4">
+            <i class="fas fa-seedling law-icon"></i>
+            <h3 class="law-title">2. Loi de la Semence et de la Récolte</h3>
+            <p>Ce que vous semez, vous le récolterez. Chaque action produit un effet. <br><strong>Coran (53:39) :</strong> <em>“L’homme n’a que ce qu’il a acquis.”</em></p>
+            <p><strong>Application :</strong> Agissez avec bienveillance pour récolter des bénédictions.</p>
+          </div>
+        </div>
+        <!-- Loi 3 -->
+        <div class="col-md-6 col-lg-4">
+          <div class="card text-white p-4">
+            <i class="fas fa-heart law-icon"></i>
+            <h3 class="law-title">3. Loi de la Gratitude (Shukr)</h3>
+            <p>Être reconnaissant attire plus de bénédictions. <br><strong>Coran (14:7) :</strong> <em>“Si vous êtes reconnaissants, J’augmenterai pour vous.”</em></p>
+            <p><strong>Application :</strong> Tenez un journal de gratitude quotidien.</p>
+          </div>
+        </div>
+        <!-- Loi 4 -->
+        <div class="col-md-6 col-lg-4">
+          <div class="card text-white p-4">
+            <i class="fas fa-hand-holding-heart law-icon"></i>
+            <h3 class="law-title">4. Loi du Don (Sadaka)</h3>
+            <p>Donner active le flux d’abondance. <br><strong>Hadith :</strong> <em>“La main qui donne est meilleure que celle qui reçoit.”</em></p>
+            <p><strong>Application :</strong> Partagez temps, argent ou savoir sans attendre de retour.</p>
+          </div>
+        </div>
+        <!-- Loi 5 -->
+        <div class="col-md-6 col-lg-4">
+          <div class="card text-white p-4">
+            <i class="fas fa-magnet law-icon"></i>
+            <h3 class="law-title">5. Loi de l’Attraction</h3>
+            <p>Vous attirez ce que vous pensez et ressentez profondément. <br><strong>Application :</strong> Cultivez des pensées positives et un tawakkul sincère.</p>
+          </div>
+        </div>
+        <!-- Loi 6 -->
+        <div class="col-md-6 col-lg-4">
+          <div class="card text-white p-4">
+            <i class="fas fa-wave-square law-icon"></i>
+            <h3 class="law-title">6. Loi de l’Énergie</h3>
+            <p>Tout est énergie. Prières, dhikr et pensées émettent des fréquences. <br><strong>Application :</strong> Pratiquez le dhikr pour élever votre vibration.</p>
+          </div>
+        </div>
+        <!-- Loi 7 -->
+        <div class="col-md-6 col-lg-4">
+          <div class="card text-white p-4">
+            <i class="fas fa-link law-icon"></i>
+            <h3 class="law-title">7. Loi de l’Unité (Tawhid)</h3>
+            <p>Tout est interconnecté et revient à un Créateur unique. <br><strong>Application :</strong> Cherchez le sens divin dans chaque événement.</p>
+          </div>
+        </div>
+        <!-- Loi 8 -->
+        <div class="col-md-6 col-lg-4">
+          <div class="card text-white p-4">
+            <i class="fas fa-balance-scale law-icon"></i>
+            <h3 class="law-title">8. Loi de la Cause et de l’Effet</h3>
+            <p>Rien n’est dû au hasard. Chaque choix a une conséquence. <br><strong>Application :</strong> Soyez conscient des impacts de vos décisions.</p>
+          </div>
+        </div>
+        <!-- Loi 9 -->
+        <div class="col-md-6 col-lg-4">
+          <div class="card text-white p-4">
+            <i class="fas fa-feather-alt law-icon"></i>
+            <h3 class="law-title">9. Loi du Détachement</h3>
+            <p>Faites votre maximum, puis lâchez prise. <br><strong>Application :</strong> Pratiquez le tawakkul en confiant les résultats à Allah.</p>
+          </div>
+        </div>
+        <!-- Loi 10 -->
+        <div class="col-md-6 col-lg-4">
+          <div class="card text-white p-4">
+            <i class="fas fa-clock law-icon"></i>
+            <h3 class="law-title">10. Loi du Temps</h3>
+            <p>Rien ne vient avant l’heure. La patience est une force. <br><strong>Application :</strong> Cultivez le sabr face aux délais.</p>
+          </div>
+        </div>
+        <!-- Loi 11 -->
+        <div class="col-md-6 col-lg-4">
+          <div class="card text-white p-4">
+            <i class="fas fa-yin-yang law-icon"></i>
+            <h3 class="law-title">11. Loi de la Polarité</h3>
+            <p>Tout a deux faces : lumière et ombre. <br><strong>Application :</strong> Cherchez la sagesse dans chaque épreuve.</p>
+          </div>
+        </div>
+        <!-- Loi 12 -->
+        <div class="col-md-6 col-lg-4">
+          <div class="card text-white p-4">
+            <i class="fas fa-mountain law-icon"></i>
+            <h3 class="law-title">12. Loi de l’Élévation</h3>
+            <p>Les épreuves élèvent ceux qui les surmontent avec foi. <br><strong>Application :</strong> Considérez les défis comme des opportunités de croissance.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Quote Section -->
+  <section id="quote" class="quote-section">
+    <div class="container">
+      <h2 class="text-center mb-4">Extrait Coranique à Méditer</h2>
+      <blockquote class="blockquote text-center">
+        <p class="mb-0">“Et ton Seigneur ne lèse personne. Quiconque fait le poids d’un atome de bien le verra, et quiconque fait le poids d’un atome de mal le verra.”</p>
+        <footer class="blockquote-footer text-white mt-2">Sourate Az-Zalzalah (99:7-8)</footer>
+      </blockquote>
+    </div>
+  </section>
+
+  <!-- Download Section -->
+  <section id="download" class="py-5 text-center">
+    <div class="container">
+      <h2 class="mb-4">Ressources à Télécharger</h2>
+      <p>Choisissez une option pour approfondir votre compréhension des 12 Lois :</p>
+      <button class="btn download-btn mx-2" data-bs-toggle="modal" data-bs-target="#infographicModal">Infographie Inspirante</button>
+      <button class="btn download-btn mx-2" data-bs-toggle="modal" data-bs-target="#whatsappModal">Version WhatsApp</button>
+      <button class="btn download-btn mx-2" data-bs-toggle="modal" data-bs-target="#pdfModal">PDF Spirituel</button>
+    </div>
+  </section>
+
+  <!-- Modals -->
+  <!-- Infographic Modal -->
+  <div class="modal fade" id="infographicModal" tabindex="-1" aria-labelledby="infographicModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="infographicModalLabel">Infographie Inspirante</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p>Une infographie colorée et visuelle des 12 Lois de l’Univers sera bientôt disponible. Inscrivez-vous pour être notifié !</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- WhatsApp Modal -->
+  <div class="modal fade" id="whatsappModal" tabindex="-1" aria-labelledby="whatsappModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="whatsappModalLabel">Version WhatsApp</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p>Une version courte et percutante des 12 Lois à partager sur WhatsApp est en préparation. Restez connecté !</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- PDF Modal -->
+  <div class="modal fade" id="pdfModal" tabindex="-1" aria-labelledby="pdfModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="pdfModalLabel">PDF Spirituel</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p>Un PDF détaillé des 12 Lois avec des explications et des conseils pratiques sera bientôt disponible. Inscrivez-vous pour le recevoir !</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap JS and Popper -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // Animation on scroll
+    const cards = document.querySelectorAll('.card');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('animate-fadeInUp');
+        }
+      });
+    }, { threshold: 0.2 });
+
+    cards.forEach(card => observer.observe(card));
+  </script>
+</body>
+</html>
