@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Top 12 des Grandes Lois de l'Univers</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+  <style>
+    :root {
+      --primary-color: #2c3e50;
+      --secondary-color: #3498db;
+      --accent-color: #e74c3c;
+      --light-bg: #f8f9fa;
+      --dark-bg: #343a40;
+      --scrum-orange: #ff7f2a;
+      --agile-blue: #4d8af0;
+    }
+
+    body {
+      background-color: var(--light-bg);
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    .navbar {
+      background-color: var(--primary-color);
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+
+    .navbar-brand {
+      font-weight: 700;
+      color: white;
+    }
+
+    .hero-section {
+      background: linear-gradient(135deg, var(--primary-color) 0%, var(--agile-blue) 100%);
+      color: white;
+      padding: 4rem 0;
+      margin-bottom: 3rem;
+      border-radius: 0 0 20px 20px;
+    }
+
+    .card {
+      border: none;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      transition: all 0.3s ease;
+      height: 100%;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+    }
+
+    .card-header {
+      background-color: var(--primary-color);
+      color: white;
+      font-weight: 600;
+    }
+
+    .btn-primary {
+      background-color: var(--agile-blue);
+      border: none;
+    }
+
+    .btn-primary:hover {
+      background-color: #3a7bd5;
+    }
+
+    .footer {
+      background-color: var(--dark-bg);
+      color: white;
+      padding: 2rem 0;
+      margin-top: 3rem;
+    }
+
+    /* Animation pour les cartes */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .module-card {
+      animation: fadeIn 0.5s ease forwards;
+      opacity: 0;
+    }
+
+    /* Délai d'animation pour chaque carte */
+    .module-card:nth-child(1) { animation-delay: 0.1s; }
+    .module-card:nth-child(2) { animation-delay: 0.2s; }
+    .module-card:nth-child(3) { animation-delay: 0.3s; }
+    .module-card:nth-child(4) { animation-delay: 0.4s; }
+    .module-card:nth-child(5) { animation-delay: 0.5s; }
+    .module-card:nth-child(6) { animation-delay: 0.6s; }
+    .module-card:nth-child(7) { animation-delay: 0.7s; }
+
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+      .hero-section {
+        padding: 2rem 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark mb-4">
+    <div class="container">
+      <a class="navbar-brand" href="#">
+        🌌 Lois Universelles
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link active" href="#concepts">Concepts</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#laws">Les Lois</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#resources">Ressources</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero-section text-center">
+    <div class="container">
+      <h1 class="display-4 fw-bold mb-3">🌌 Top 12 des Grandes Lois de l'Univers</h1>
+      <p class="lead mb-4">Lois spirituelles, universelles et naturelles – reconnues dans l'islam, les sagesses anciennes et le développement personnel</p>
+    </div>
+  </section>
+
+  <!-- Main Content Section -->
+  <div class="container mb-5">
+    <section id="laws" class="mb-5">
+      <h2 class="text-center mb-4">Les 12 Lois de l'Univers</h2>
+      <div class="row">
+        <!-- Law 1 -->
+        <div class="col-md-6 mb-4">
+          <div class="card module-card">
+            <div class="card-header">
+              <h5>Loi de l'Intention</h5>
+            </div>
+            <div class="card-body">
+              <p>Tout commence par une intention. Elle façonne la direction, l'énergie, et le résultat.</p>
+              <button class="btn btn-primary">En savoir plus</button>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Law 2 -->
+        <div class="col-md-6 mb-4">
+          <div class="card module-card">
+            <div class="card-header">
+              <h5>Loi de la Semence et de la Récolte</h5>
+            </div>
+            <div class="card-body">
+              <p>"Ce que tu sèmes, tu le récolteras."</p>
+              <button class="btn btn-primary">En savoir plus</button>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Add more laws here following the same structure -->
+
+      </div>
+    </section>
+
+    <!-- Resources Section -->
+    <section id="resources" class="text-center mb-5">
+      <h2 class="mb-4">Ressources supplémentaires</h2>
+      <p>Découvrez des articles, des vidéos, et des livres pour approfondir votre compréhension des lois universelles.</p>
+      <button class="btn btn-outline-primary">Explorer les ressources</button>
+    </section>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container text-center">
+      <h4>Partagez ces lois universelles</h4>
+      <p>Ces principes intemporels peuvent transformer votre vie si vous les appliquez avec sincérité et constance.</p>
+      <div class="social-icons mt-3">
+        <a href="#" class="text-white mx-2"><i class="bi bi-facebook"></i></a>
+        <a href="#" class="text-white mx-2"><i class="bi bi-twitter"></i></a>
+        <a href="#" class="text-white mx-2"><i class="bi bi-instagram"></i></a>
+        <a href="#" class="text-white mx-2"><i class="bi bi-pinterest"></i></a>
+      </div>
+      <p class="mt-4 mb-0">© 2023 Sagesses Universelles. Tous droits réservés.</p>
+    </div>
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

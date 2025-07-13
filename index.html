@@ -1,335 +1,822 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Les 12 Grandes Lois de l’Univers</title>
-  <!-- Bootstrap CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-  <!-- Font Awesome pour les icônes -->
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
-  <style>
-    body {
-      background: linear-gradient(135deg, #1e3c72, #2a5298);
-      color: #fff;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      overflow-x: hidden;
-    }
-    .navbar {
-      background: rgba(0, 0, 0, 0.8);
-      backdrop-filter: blur(10px);
-    }
-    .hero-section {
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      background: url('https://source.unsplash.com/random/1920x1080?cosmos') no-repeat center center/cover;
-      position: relative;
-    }
-    .hero-section::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0, 0, 0, 0.5);
-    }
-    .hero-content {
-      position: relative;
-      z-index: 1;
-    }
-    .card {
-      background: rgba(255, 255, 255, 0.1);
-      border: none;
-      backdrop-filter: blur(10px);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-    .card:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
-    }
-    .law-title {
-      font-size: 1.8rem;
-      font-weight: bold;
-      color: #ffd700;
-    }
-    .law-icon {
-      font-size: 3rem;
-      color: #ffd700;
-      margin-bottom: 1rem;
-    }
-    .quote-section {
-      background: #2a5298;
-      padding: 3rem 0;
-      text-align: center;
-    }
-    .download-btn {
-      background: #ffd700;
-      color: #1e3c72;
-      font-weight: bold;
-      border: none;
-      padding: 0.8rem 2rem;
-      border-radius: 50px;
-      transition: background 0.3s ease;
-    }
-    .download-btn:hover {
-      background: #e6c200;
-    }
-    .modal-content {
-      background: rgba(255, 255, 255, 0.9);
-      color: #1e3c72;
-    }
-    @keyframes fadeInUp {
-      from {
-        opacity: 0;
-        transform: translateY(50px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-    .animate-fadeInUp {
-      animation: fadeInUp 1s ease-out forwards;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Top 12 des Grandes Lois de l'Univers</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #4a148c;
+            --secondary-color: #ffab00;
+            --accent-color: #7b1fa2;
+            --light-color: #f3e5f5;
+            --dark-color: #12005e;
+        }
+        
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #f8f9fa;
+            color: #333;
+            overflow-x: hidden;
+        }
+        
+        .hero-section {
+            background: linear-gradient(135deg, var(--primary-color), var(--dark-color));
+            color: white;
+            padding: 5rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero-section::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path fill="rgba(255,255,255,0.05)" d="M0,0 L100,0 L100,100 L0,100 Z" /></svg>');
+            background-size: cover;
+            opacity: 0.1;
+        }
+        
+        h1, h2, h3, h4 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+        }
+        
+        .hero-title {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .hero-subtitle {
+            font-size: 1.5rem;
+            opacity: 0.9;
+            margin-bottom: 2rem;
+        }
+        
+        .law-card {
+            border: none;
+            border-radius: 15px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            margin-bottom: 2rem;
+            background: white;
+            position: relative;
+        }
+        
+        .law-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+        }
+        
+        .law-number {
+            position: absolute;
+            top: -15px;
+            left: -15px;
+            width: 60px;
+            height: 60px;
+            background: var(--secondary-color);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            z-index: 2;
+        }
+        
+        .law-header {
+            background: linear-gradient(to right, var(--primary-color), var(--accent-color));
+            color: white;
+            padding: 1.5rem;
+        }
+        
+        .law-body {
+            padding: 2rem;
+            position: relative;
+        }
+        
+        .law-body::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(to right, var(--primary-color), var(--accent-color));
+        }
+        
+        .law-title {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            color: white;
+        }
+        
+        .law-content {
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+        
+        .quran-section {
+            background: var(--light-color);
+            padding: 3rem;
+            border-radius: 15px;
+            margin: 3rem 0;
+            position: relative;
+            border-left: 5px solid var(--secondary-color);
+        }
+        
+        .quran-text {
+            font-size: 1.5rem;
+            font-style: italic;
+            margin-bottom: 1rem;
+            position: relative;
+            padding-left: 2rem;
+        }
+        
+        .quran-text::before {
+            content: """;
+            position: absolute;
+            left: 0;
+            top: 0;
+            font-size: 3rem;
+            color: var(--secondary-color);
+            line-height: 1;
+        }
+        
+        .quran-reference {
+            text-align: right;
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+        
+        .action-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin: 3rem 0;
+        }
+        
+        .btn-custom {
+            background: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 0.8rem 2rem;
+            border-radius: 50px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .btn-custom:hover {
+            background: var(--accent-color);
+            color: white;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        
+        .footer {
+            background: var(--dark-color);
+            color: white;
+            padding: 3rem 0;
+            text-align: center;
+        }
+        
+        .floating-particles {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+        }
+        
+        .particle {
+            position: absolute;
+            background: rgba(255, 255, 255, 0.5);
+            border-radius: 50%;
+            pointer-events: none;
+        }
+        
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2.5rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.2rem;
+            }
+            
+            .law-title {
+                font-size: 1.5rem;
+            }
+            
+            .quran-text {
+                font-size: 1.2rem;
+            }
+        }
+        
+        /* Animation classes */
+        .fade-in {
+            animation: fadeIn 1s ease-in;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .pulse {
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+    </style>
 </head>
 <body>
-  <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg fixed-top">
-    <div class="container">
-      <a class="navbar-brand text-white" href="#">🌌 Les 12 Lois de l’Univers</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item">
-            <a class="nav-link text-white" href="#laws">Les Lois</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link text-white" href="#quote">Citation</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link text-white" href="#download">Télécharger</a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
+    <!-- Hero Section -->
+    <section class="hero-section text-center">
+        <div class="floating-particles" id="particles"></div>
+        <div class="container position-relative">
+            <h1 class="hero-title">🌌 Top 12 des Grandes Lois de l'Univers</h1>
+            <p class="hero-subtitle">Lois spirituelles, universelles et naturelles – reconnues dans l'islam, les sagesses anciennes et le développement personnel</p>
+            <p class="lead">Ces lois gouvernent <strong>la création, l'énergie, les relations, la réussite, la bénédiction (baraka)</strong> et la vie elle-même.</p>
+        </div>
+    </section>
 
-  <!-- Hero Section -->
-  <section class="hero-section">
-    <div class="hero-content">
-      <h1 class="display-3 fw-bold animate-fadeInUp">Les 12 Grandes Lois de l’Univers</h1>
-      <p class="lead animate-fadeInUp" style="animation-delay: 0.3s;">
-        Découvrez les principes spirituels, universels et naturels qui régissent la création, l’énergie et la vie.
-      </p>
-      <a href="#laws" class="btn download-btn mt-3 animate-fadeInUp" style="animation-delay: 0.6s;">Explorer les Lois</a>
-    </div>
-  </section>
+    <!-- Main Content -->
+    <section class="container py-5">
+        <div class="row">
+            <!-- Law 1 -->
+            <div class="col-lg-6 fade-in" style="animation-delay: 0.1s;">
+                <div class="law-card">
+                    <div class="law-number">1️⃣</div>
+                    <div class="law-header">
+                        <h3 class="law-title">Loi de l'Intention (Niyyah)</h3>
+                    </div>
+                    <div class="law-body">
+                        <p class="law-content">Tout commence par une intention. Elle façonne la direction, l'énergie, et le résultat. Hadith : <em>"Les actes ne valent que par leurs intentions"</em>. En islam, la Niyyah purifie l'action et détermine sa valeur spirituelle. Une intention sincère multiplie la récompense divine.</p>
+                        <button class="btn btn-sm btn-outline-primary learn-more" data-law="1">En savoir plus</button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Law 2 -->
+            <div class="col-lg-6 fade-in" style="animation-delay: 0.2s;">
+                <div class="law-card">
+                    <div class="law-number">2️⃣</div>
+                    <div class="law-header">
+                        <h3 class="law-title">Loi de la Semence et de la Récolte</h3>
+                    </div>
+                    <div class="law-body">
+                        <p class="law-content">"Ce que tu sèmes, tu le récolteras." (Coran 53:39) Que ce soit bien ou mal, chaque action engendre un effet ou une conséquence. Cette loi est la base du karma et de la justice divine. En agriculture comme en spiritualité, on ne récolte que ce qu'on a semé.</p>
+                        <button class="btn btn-sm btn-outline-primary learn-more" data-law="2">En savoir plus</button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Law 3 -->
+            <div class="col-lg-6 fade-in" style="animation-delay: 0.3s;">
+                <div class="law-card">
+                    <div class="law-number">3️⃣</div>
+                    <div class="law-header">
+                        <h3 class="law-title">Loi de la Gratitude (Shukr)</h3>
+                    </div>
+                    <div class="law-body">
+                        <p class="law-content">Remercier pour ce qu'on a <strong>attire plus</strong>. Allah dit : <em>"Si vous êtes reconnaissants, J'augmenterai pour vous."</em> (Coran 14:7). La gratitude transforme ce que nous avons en assez, et plus. C'est un état d'esprit qui magnifie les bénédictions et en attire de nouvelles.</p>
+                        <button class="btn btn-sm btn-outline-primary learn-more" data-law="3">En savoir plus</button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Law 4 -->
+            <div class="col-lg-6 fade-in" style="animation-delay: 0.4s;">
+                <div class="law-card">
+                    <div class="law-number">4️⃣</div>
+                    <div class="law-header">
+                        <h3 class="law-title">Loi du Don (Sadaka / Échange)</h3>
+                    </div>
+                    <div class="law-body">
+                        <p class="law-content">Donner active le flux de bénédictions. Celui qui partage attire l'abondance. <em>"La main qui donne est meilleure que celle qui reçoit."</em> Le don purifie la richesse, guérit les maux et crée un cycle vertueux de circulation des biens et des énergies positives.</p>
+                        <button class="btn btn-sm btn-outline-primary learn-more" data-law="4">En savoir plus</button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Law 5 -->
+            <div class="col-lg-6 fade-in" style="animation-delay: 0.5s;">
+                <div class="law-card">
+                    <div class="law-number">5️⃣</div>
+                    <div class="law-header">
+                        <h3 class="law-title">Loi de l'Attraction (Tawakkul + Action)</h3>
+                    </div>
+                    <div class="law-body">
+                        <p class="law-content">Tu attires ce que tu crois, ce que tu penses, ce que tu ressens profondément. L'univers est sensible à ta vibration intérieure. En islam, cela s'accompagne du Tawakkul (confiance en Allah) et de l'action juste. Vos pensées dominantes déterminent votre réalité.</p>
+                        <button class="btn btn-sm btn-outline-primary learn-more" data-law="5">En savoir plus</button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Law 6 -->
+            <div class="col-lg-6 fade-in" style="animation-delay: 0.6s;">
+                <div class="law-card">
+                    <div class="law-number">6️⃣</div>
+                    <div class="law-header">
+                        <h3 class="law-title">Loi de l'Énergie / Fréquence</h3>
+                    </div>
+                    <div class="law-body">
+                        <p class="law-content">Tout est énergie. Le dhikr, les prières, les intentions, les mots et les pensées émettent des fréquences puissantes. Nous attirons ce qui correspond à notre fréquence vibratoire. Les bonnes actions et les pensées pures élèvent notre vibration spirituelle.</p>
+                        <button class="btn btn-sm btn-outline-primary learn-more" data-law="6">En savoir plus</button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Law 7 -->
+            <div class="col-lg-6 fade-in" style="animation-delay: 0.7s;">
+                <div class="law-card">
+                    <div class="law-number">7️⃣</div>
+                    <div class="law-header">
+                        <h3 class="law-title">Loi de l'Unité (Tawhid)</h3>
+                    </div>
+                    <div class="law-body">
+                        <p class="law-content">Tout est interconnecté et revient à un seul Créateur. Rien n'est séparé, tout a un but divin. Le Tawhid est le fondement de l'islam : l'unité divine. Cette loi nous rappelle que nous faisons partie d'un tout et que nos actions affectent l'ensemble.</p>
+                        <button class="btn btn-sm btn-outline-primary learn-more" data-law="7">En savoir plus</button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Law 8 -->
+            <div class="col-lg-6 fade-in" style="animation-delay: 0.8s;">
+                <div class="law-card">
+                    <div class="law-number">8️⃣</div>
+                    <div class="law-header">
+                        <h3 class="law-title">Loi de la Cause et de l'Effet (Qadar)</h3>
+                    </div>
+                    <div class="law-body">
+                        <p class="law-content">Tout effet a une cause. Rien n'est dû au hasard. Les choix déclenchent des réactions, visibles ou invisibles. En islam, cela s'inscrit dans le cadre du Qadar (destin) où Allah connaît toutes les causes et tous les effets depuis l'éternité.</p>
+                        <button class="btn btn-sm btn-outline-primary learn-more" data-law="8">En savoir plus</button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Law 9 -->
+            <div class="col-lg-6 fade-in" style="animation-delay: 0.9s;">
+                <div class="law-card">
+                    <div class="law-number">9️⃣</div>
+                    <div class="law-header">
+                        <h3 class="law-title">Loi du Détachement (Tafwīd)</h3>
+                    </div>
+                    <div class="law-body">
+                        <p class="law-content">Fait ton maximum, puis <strong>détache-toi</strong> du résultat. Ce lâcher-prise sincère ouvre les portes invisibles (tawakkul complet). Le Prophète (ﷺ) enseignait : "Si toute la communauté se réunissait pour te causer du tort, elle ne pourrait te causer que ce qu'Allah a déjà écrit pour toi."</p>
+                        <button class="btn btn-sm btn-outline-primary learn-more" data-law="9">En savoir plus</button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Law 10 -->
+            <div class="col-lg-6 fade-in" style="animation-delay: 1.0s;">
+                <div class="law-card">
+                    <div class="law-number">🔟</div>
+                    <div class="law-header">
+                        <h3 class="law-title">Loi du Temps (Sabr + Divine Timing)</h3>
+                    </div>
+                    <div class="law-body">
+                        <p class="law-content">Rien ne vient avant l'heure. L'univers agit avec précision. La patience est une force spirituelle. Le Sabr (patience) est souvent mentionné dans le Coran comme une vertu essentielle. Tout arrive au moment parfait selon la sagesse divine, même si nous ne comprenons pas le timing.</p>
+                        <button class="btn btn-sm btn-outline-primary learn-more" data-law="10">En savoir plus</button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Law 11 -->
+            <div class="col-lg-6 fade-in" style="animation-delay: 1.1s;">
+                <div class="law-card">
+                    <div class="law-number">1️⃣1️⃣</div>
+                    <div class="law-header">
+                        <h3 class="law-title">Loi de la Polarité (Épreuves et Bienfaits)</h3>
+                    </div>
+                    <div class="law-body">
+                        <p class="law-content">Tout a deux faces : lumière/ombre, douleur/don. Derrière chaque difficulté se cache une sagesse. Le Coran dit : "A côté de la difficulté est, certes, une facilité." (94:5). Cette loi nous enseigne que les épreuves contiennent des bénédictions cachées.</p>
+                        <button class="btn btn-sm btn-outline-primary learn-more" data-law="11">En savoir plus</button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Law 12 -->
+            <div class="col-lg-6 fade-in" style="animation-delay: 1.2s;">
+                <div class="law-card">
+                    <div class="law-number">1️⃣2️⃣</div>
+                    <div class="law-header">
+                        <h3 class="law-title">Loi de l'Élévation par l'Épreuve</h3>
+                    </div>
+                    <div class="law-body">
+                        <p class="law-content">Plus l'épreuve est grande, plus la récompense l'est. L'univers élève ceux qui endurent avec foi. Le Prophète (ﷺ) a dit : "Quand Allah veut du bien pour quelqu'un, Il l'éprouve." Les difficultés sont des escaliers vers des niveaux supérieurs de conscience et de récompense.</p>
+                        <button class="btn btn-sm btn-outline-primary learn-more" data-law="12">En savoir plus</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Quran Section -->
+        <div class="quran-section fade-in" style="animation-delay: 1.3s;">
+            <p class="quran-text">"Et ton Seigneur ne lèse personne. Quiconque fait le poids d'un atome de bien le verra, et quiconque fait le poids d'un atome de mal le verra."</p>
+            <p class="quran-reference">— Sourate Az-Zalzalah (99:7-8)</p>
+        </div>
+        
+        <!-- Action Buttons -->
+        <div class="action-buttons fade-in" style="animation-delay: 1.4s;">
+            <button class="btn btn-custom pulse" id="infographic-btn">
+                <i class="fas fa-image"></i> Infographie Inspirante
+            </button>
+            <button class="btn btn-custom pulse" id="whatsapp-btn">
+                <i class="fab fa-whatsapp"></i> Version WhatsApp
+            </button>
+            <button class="btn btn-custom pulse" id="pdf-btn">
+                <i class="fas fa-file-pdf"></i> PDF Spirituel
+            </button>
+        </div>
+    </section>
 
-  <!-- Laws Section -->
-  <section id="laws" class="py-5">
-    <div class="container">
-      <h2 class="text-center mb-5">Les 12 Lois Universelles</h2>
-      <div class="row g-4">
-        <!-- Loi 1 -->
-        <div class="col-md-6 col-lg-4">
-          <div class="card text-white p-4">
-            <i class="fas fa-lightbulb law-icon"></i>
-            <h3 class="law-title">1. Loi de l’Intention (Niyyah)</h3>
-            <p>Tout commence par une intention claire. Elle oriente l’énergie et les résultats. <br><strong>Hadith :</strong> <em>“Les actes ne valent que par leurs intentions.”</em></p>
-            <p><strong>Application :</strong> Définissez une intention pure avant chaque action (prière, travail, relations).</p>
-          </div>
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <h4>Partagez ces lois universelles</h4>
+            <p>Ces principes intemporels peuvent transformer votre vie si vous les appliquez avec sincérité et constance.</p>
+            <div class="social-icons mt-3">
+                <a href="#" class="text-white mx-2"><i class="fab fa-facebook-f fa-lg"></i></a>
+                <a href="#" class="text-white mx-2"><i class="fab fa-twitter fa-lg"></i></a>
+                <a href="#" class="text-white mx-2"><i class="fab fa-instagram fa-lg"></i></a>
+                <a href="#" class="text-white mx-2"><i class="fab fa-pinterest fa-lg"></i></a>
+            </div>
+            <p class="mt-4 mb-0">© 2023 Sagesses Universelles. Tous droits réservés.</p>
         </div>
-        <!-- Loi 2 -->
-        <div class="col-md-6 col-lg-4">
-          <div class="card text-white p-4">
-            <i class="fas fa-seedling law-icon"></i>
-            <h3 class="law-title">2. Loi de la Semence et de la Récolte</h3>
-            <p>Ce que vous semez, vous le récolterez. Chaque action produit un effet. <br><strong>Coran (53:39) :</strong> <em>“L’homme n’a que ce qu’il a acquis.”</em></p>
-            <p><strong>Application :</strong> Agissez avec bienveillance pour récolter des bénédictions.</p>
-          </div>
-        </div>
-        <!-- Loi 3 -->
-        <div class="col-md-6 col-lg-4">
-          <div class="card text-white p-4">
-            <i class="fas fa-heart law-icon"></i>
-            <h3 class="law-title">3. Loi de la Gratitude (Shukr)</h3>
-            <p>Être reconnaissant attire plus de bénédictions. <br><strong>Coran (14:7) :</strong> <em>“Si vous êtes reconnaissants, J’augmenterai pour vous.”</em></p>
-            <p><strong>Application :</strong> Tenez un journal de gratitude quotidien.</p>
-          </div>
-        </div>
-        <!-- Loi 4 -->
-        <div class="col-md-6 col-lg-4">
-          <div class="card text-white p-4">
-            <i class="fas fa-hand-holding-heart law-icon"></i>
-            <h3 class="law-title">4. Loi du Don (Sadaka)</h3>
-            <p>Donner active le flux d’abondance. <br><strong>Hadith :</strong> <em>“La main qui donne est meilleure que celle qui reçoit.”</em></p>
-            <p><strong>Application :</strong> Partagez temps, argent ou savoir sans attendre de retour.</p>
-          </div>
-        </div>
-        <!-- Loi 5 -->
-        <div class="col-md-6 col-lg-4">
-          <div class="card text-white p-4">
-            <i class="fas fa-magnet law-icon"></i>
-            <h3 class="law-title">5. Loi de l’Attraction</h3>
-            <p>Vous attirez ce que vous pensez et ressentez profondément. <br><strong>Application :</strong> Cultivez des pensées positives et un tawakkul sincère.</p>
-          </div>
-        </div>
-        <!-- Loi 6 -->
-        <div class="col-md-6 col-lg-4">
-          <div class="card text-white p-4">
-            <i class="fas fa-wave-square law-icon"></i>
-            <h3 class="law-title">6. Loi de l’Énergie</h3>
-            <p>Tout est énergie. Prières, dhikr et pensées émettent des fréquences. <br><strong>Application :</strong> Pratiquez le dhikr pour élever votre vibration.</p>
-          </div>
-        </div>
-        <!-- Loi 7 -->
-        <div class="col-md-6 col-lg-4">
-          <div class="card text-white p-4">
-            <i class="fas fa-link law-icon"></i>
-            <h3 class="law-title">7. Loi de l’Unité (Tawhid)</h3>
-            <p>Tout est interconnecté et revient à un Créateur unique. <br><strong>Application :</strong> Cherchez le sens divin dans chaque événement.</p>
-          </div>
-        </div>
-        <!-- Loi 8 -->
-        <div class="col-md-6 col-lg-4">
-          <div class="card text-white p-4">
-            <i class="fas fa-balance-scale law-icon"></i>
-            <h3 class="law-title">8. Loi de la Cause et de l’Effet</h3>
-            <p>Rien n’est dû au hasard. Chaque choix a une conséquence. <br><strong>Application :</strong> Soyez conscient des impacts de vos décisions.</p>
-          </div>
-        </div>
-        <!-- Loi 9 -->
-        <div class="col-md-6 col-lg-4">
-          <div class="card text-white p-4">
-            <i class="fas fa-feather-alt law-icon"></i>
-            <h3 class="law-title">9. Loi du Détachement</h3>
-            <p>Faites votre maximum, puis lâchez prise. <br><strong>Application :</strong> Pratiquez le tawakkul en confiant les résultats à Allah.</p>
-          </div>
-        </div>
-        <!-- Loi 10 -->
-        <div class="col-md-6 col-lg-4">
-          <div class="card text-white p-4">
-            <i class="fas fa-clock law-icon"></i>
-            <h3 class="law-title">10. Loi du Temps</h3>
-            <p>Rien ne vient avant l’heure. La patience est une force. <br><strong>Application :</strong> Cultivez le sabr face aux délais.</p>
-          </div>
-        </div>
-        <!-- Loi 11 -->
-        <div class="col-md-6 col-lg-4">
-          <div class="card text-white p-4">
-            <i class="fas fa-yin-yang law-icon"></i>
-            <h3 class="law-title">11. Loi de la Polarité</h3>
-            <p>Tout a deux faces : lumière et ombre. <br><strong>Application :</strong> Cherchez la sagesse dans chaque épreuve.</p>
-          </div>
-        </div>
-        <!-- Loi 12 -->
-        <div class="col-md-6 col-lg-4">
-          <div class="card text-white p-4">
-            <i class="fas fa-mountain law-icon"></i>
-            <h3 class="law-title">12. Loi de l’Élévation</h3>
-            <p>Les épreuves élèvent ceux qui les surmontent avec foi. <br><strong>Application :</strong> Considérez les défis comme des opportunités de croissance.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+    </footer>
 
-  <!-- Quote Section -->
-  <section id="quote" class="quote-section">
-    <div class="container">
-      <h2 class="text-center mb-4">Extrait Coranique à Méditer</h2>
-      <blockquote class="blockquote text-center">
-        <p class="mb-0">“Et ton Seigneur ne lèse personne. Quiconque fait le poids d’un atome de bien le verra, et quiconque fait le poids d’un atome de mal le verra.”</p>
-        <footer class="blockquote-footer text-white mt-2">Sourate Az-Zalzalah (99:7-8)</footer>
-      </blockquote>
+    <!-- Law Details Modal -->
+    <div class="modal fade" id="lawModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header" style="background: linear-gradient(to right, var(--primary-color), var(--accent-color)); color: white;">
+                    <h5 class="modal-title" id="lawModalTitle">Détails de la Loi</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body" id="lawModalBody">
+                    <!-- Content will be loaded here by JavaScript -->
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
+                </div>
+            </div>
+        </div>
     </div>
-  </section>
 
-  <!-- Download Section -->
-  <section id="download" class="py-5 text-center">
-    <div class="container">
-      <h2 class="mb-4">Ressources à Télécharger</h2>
-      <p>Choisissez une option pour approfondir votre compréhension des 12 Lois :</p>
-      <button class="btn download-btn mx-2" data-bs-toggle="modal" data-bs-target="#infographicModal">Infographie Inspirante</button>
-      <button class="btn download-btn mx-2" data-bs-toggle="modal" data-bs-target="#whatsappModal">Version WhatsApp</button>
-      <button class="btn download-btn mx-2" data-bs-toggle="modal" data-bs-target="#pdfModal">PDF Spirituel</button>
-    </div>
-  </section>
-
-  <!-- Modals -->
-  <!-- Infographic Modal -->
-  <div class="modal fade" id="infographicModal" tabindex="-1" aria-labelledby="infographicModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="infographicModalLabel">Infographie Inspirante</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-          <p>Une infographie colorée et visuelle des 12 Lois de l’Univers sera bientôt disponible. Inscrivez-vous pour être notifié !</p>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!-- WhatsApp Modal -->
-  <div class="modal fade" id="whatsappModal" tabindex="-1" aria-labelledby="whatsappModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="whatsappModalLabel">Version WhatsApp</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-          <p>Une version courte et percutante des 12 Lois à partager sur WhatsApp est en préparation. Restez connecté !</p>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!-- PDF Modal -->
-  <div class="modal fade" id="pdfModal" tabindex="-1" aria-labelledby="pdfModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="pdfModalLabel">PDF Spirituel</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-          <p>Un PDF détaillé des 12 Lois avec des explications et des conseils pratiques sera bientôt disponible. Inscrivez-vous pour le recevoir !</p>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Bootstrap JS and Popper -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-  <script>
-    // Animation on scroll
-    const cards = document.querySelectorAll('.card');
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('animate-fadeInUp');
-        }
-      });
-    }, { threshold: 0.2 });
-
-    cards.forEach(card => observer.observe(card));
-  </script>
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <script>
+        // Particle effect
+        document.addEventListener('DOMContentLoaded', function() {
+            const particlesContainer = document.getElementById('particles');
+            const particleCount = 30;
+            
+            for (let i = 0; i < particleCount; i++) {
+                const particle = document.createElement('div');
+                particle.classList.add('particle');
+                
+                // Random properties
+                const size = Math.random() * 5 + 2;
+                const posX = Math.random() * 100;
+                const posY = Math.random() * 100;
+                const delay = Math.random() * 5;
+                const duration = Math.random() * 10 + 10;
+                const opacity = Math.random() * 0.5 + 0.1;
+                
+                particle.style.width = `${size}px`;
+                particle.style.height = `${size}px`;
+                particle.style.left = `${posX}%`;
+                particle.style.top = `${posY}%`;
+                particle.style.animation = `float ${duration}s linear ${delay}s infinite`;
+                particle.style.opacity = opacity;
+                
+                particlesContainer.appendChild(particle);
+            }
+            
+            // Add floating animation
+            const style = document.createElement('style');
+            style.textContent = `
+                @keyframes float {
+                    0% { transform: translateY(0) translateX(0); }
+                    25% { transform: translateY(-20px) translateX(10px); }
+                    50% { transform: translateY(-40px) translateX(0); }
+                    75% { transform: translateY(-20px) translateX(-10px); }
+                    100% { transform: translateY(0) translateX(0); }
+                }
+            `;
+            document.head.appendChild(style);
+            
+            // Law details data
+            const lawsDetails = {
+                1: {
+                    title: "Loi de l'Intention (Niyyah)",
+                    content: `
+                        <h4>Explications approfondies</h4>
+                        <p>La Niyyah (intention) est le fondement de toute action en islam. Le Prophète Muhammad (ﷺ) a dit : "Les actions ne valent que par leurs intentions, et chacun n'a que ce qu'il a eu l'intention de faire." (Bukhari & Muslim)</p>
+                        
+                        <h4 class="mt-4">Applications pratiques</h4>
+                        <ul>
+                            <li>Avant chaque action importante, prenez un moment pour clarifier votre intention</li>
+                            <li>Renouvelez régulièrement vos intentions pour maintenir la sincérité</li>
+                            <li>Transformez les actions mondaines en actes d'adoration par une intention pieuse</li>
+                        </ul>
+                        
+                        <h4 class="mt-4">Citations inspirantes</h4>
+                        <blockquote class="blockquote">
+                            <p>"Allah ne regarde pas vos apparences ni vos richesses, mais Il regarde vos cœurs et vos actions." (Muslim)</p>
+                        </blockquote>
+                    `
+                },
+                2: {
+                    title: "Loi de la Semence et de la Récolte",
+                    content: `
+                        <h4>Explications approfondies</h4>
+                        <p>Cette loi, également connue sous le nom de loi de cause à effet ou karma dans d'autres traditions, est clairement énoncée dans le Coran : "Quiconque fait un bien fût-ce du poids d'un atome, le verra, et quiconque fait un mal fût-ce du poids d'un atome, le verra." (99:7-8)</p>
+                        
+                        <h4 class="mt-4">Applications pratiques</h4>
+                        <ul>
+                            <li>Semez régulièrement des graines de bien (aumône, bonnes actions, savoir)</li>
+                            <li>Soyez patient - certaines graines prennent du temps à germer</li>
+                            <li>Prenez conscience que même les petites actions ont des conséquences</li>
+                        </ul>
+                        
+                        <h4 class="mt-4">Citations inspirantes</h4>
+                        <blockquote class="blockquote">
+                            <p>"Si vous faites le bien, vous le faites à vous-mêmes; et si vous faites le mal, vous le faites à vous-mêmes." (Coran 17:7)</p>
+                        </blockquote>
+                    `
+                },
+                3: {
+                    title: "Loi de la Gratitude (Shukr)",
+                    content: `
+                        <h4>Explications approfondies</h4>
+                        <p>La gratitude est une clé majeure de l'abondance spirituelle et matérielle. Le Prophète (ﷺ) disait : "Celui qui ne remercie pas les gens ne remercie pas Allah." (Tirmidhi). La gratitude élève notre vibration et attire davantage de bénédictions.</p>
+                        
+                        <h4 class="mt-4">Applications pratiques</h4>
+                        <ul>
+                            <li>Tenez un journal de gratitude quotidien</li>
+                            <li>Exprimez votre reconnaissance pour les petites choses</li>
+                            <li>Remerciez Allah avant et après chaque bienfait</li>
+                        </ul>
+                        
+                        <h4 class="mt-4">Citations inspirantes</h4>
+                        <blockquote class="blockquote">
+                            <p>"Nous t'avons certes accordé l'abondance. Accomplis donc la prière pour ton Seigneur et sacrifie. Celui qui te hait sera certes, sans postérité." (Coran 108:1-3)</p>
+                        </blockquote>
+                    `
+                },
+                4: {
+                    title: "Loi du Don (Sadaka / Échange)",
+                    content: `
+                        <h4>Explications approfondies</h4>
+                        <p>Le don crée un flux d'énergie positive qui revient multiplié. Le Prophète (ﷺ) a dit : "La charité ne diminue pas la richesse." (Muslim). En donnant, nous prouvons notre confiance en Allah comme Pourvoyeur suprême.</p>
+                        
+                        <h4 class="mt-4">Applications pratiques</h4>
+                        <ul>
+                            <li>Donnez régulièrement, même de petites sommes</li>
+                            <li>Variez les formes de don (argent, temps, compétences, sourire)</li>
+                            <li>Donnez en secret autant que possible</li>
+                        </ul>
+                        
+                        <h4 class="mt-4">Citations inspirantes</h4>
+                        <blockquote class="blockquote">
+                            <p>"L'exemple de ceux qui dépensent leurs biens dans le sentier d'Allah est semblable à un grain d'où naissent sept épis, à cent grains l'épi. Car Allah multiplie la récompense à qui Il veut." (Coran 2:261)</p>
+                        </blockquote>
+                    `
+                },
+                5: {
+                    title: "Loi de l'Attraction (Tawakkul + Action)",
+                    content: `
+                        <h4>Explications approfondies</h4>
+                        <p>Cette loi enseigne que nos pensées et croyances façonnent notre réalité. En islam, cela s'accompagne toujours d'action (amal salih) et de confiance en Allah (tawakkul). Le Prophète (ﷺ) a dit : "Sois vigilant quant à Allah, tu Le trouveras devant toi."</p>
+                        
+                        <h4 class="mt-4">Applications pratiques</h4>
+                        <ul>
+                            <li>Visualisez vos objectifs avec conviction</li>
+                            <li>Entretenez des pensées positives et reconnaissantes</li>
+                            <li>Passez à l'action cohérente avec vos intentions</li>
+                        </ul>
+                        
+                        <h4 class="mt-4">Citations inspirantes</h4>
+                        <blockquote class="blockquote">
+                            <p>"Et quiconque craint Allah, Il lui donnera une issue favorable et lui accordera Ses dons par des moyens sur lesquels il ne comptait pas." (Coran 65:2-3)</p>
+                        </blockquote>
+                    `
+                },
+                6: {
+                    title: "Loi de l'Énergie / Fréquence",
+                    content: `
+                        <h4>Explications approfondies</h4>
+                        <p>Toute la création est vibration et énergie. Les prières, dhikr et bonnes actions élèvent notre fréquence vibratoire. Le Coran dit : "N'est-ce point par l'évocation d'Allah que se tranquillisent les cœurs ?" (13:28). Notre énergie attire des situations de même nature.</p>
+                        
+                        <h4 class="mt-4">Applications pratiques</h4>
+                        <ul>
+                            <li>Pratiquez régulièrement le dhikr pour élever votre vibration</li>
+                            <li>Entourez-vous de personnes et d'environnements positifs</li>
+                            <li>Purifiez vos pensées et intentions</li>
+                        </ul>
+                        
+                        <h4 class="mt-4">Citations inspirantes</h4>
+                        <blockquote class="blockquote">
+                            <p>"Et invoquez Allah avec un cœur pur." (Coran 40:14)</p>
+                        </blockquote>
+                    `
+                },
+                7: {
+                    title: "Loi de l'Unité (Tawhid)",
+                    content: `
+                        <h4>Explications approfondies</h4>
+                        <p>Le Tawhid (unicité divine) est le fondement de l'islam. Tout dans l'univers est interconnecté et témoigne de l'unité du Créateur. Le Coran dit : "Et Nous n'avons rien créé dans le ciel et sur la terre sans but." (38:27). Cette loi nous rappelle notre place dans le grand dessein cosmique.</p>
+                        
+                        <h4 class="mt-4">Applications pratiques</h4>
+                        <ul>
+                            <li>Voyez la main d'Allah dans tous les événements</li>
+                            <li>Agissez en conscience de votre interdépendance avec la création</li>
+                            <li>Cherchez l'unité plutôt que la division</li>
+                        </ul>
+                        
+                        <h4 class="mt-4">Citations inspirantes</h4>
+                        <blockquote class="blockquote">
+                            <p>"Et c'est Lui qui a créé les cieux et la terre en toute vérité." (Coran 6:73)</p>
+                        </blockquote>
+                    `
+                },
+                8: {
+                    title: "Loi de la Cause et de l'Effet (Qadar)",
+                    content: `
+                        <h4>Explications approfondies</h4>
+                        <p>Allah a établi des lois de cause à effet dans l'univers, tout en gardant le contrôle ultime sur toute chose. Le Prophète (ﷺ) a dit : "Prenez des mesures préventives, car chacun sera facilité selon ce pour quoi il a été créé." (Bukhari). Nos choix ont des conséquences dans ce monde et dans l'au-delà.</p>
+                        
+                        <h4 class="mt-4">Applications pratiques</h4>
+                        <ul>
+                            <li>Prenez des décisions conscientes et réfléchies</li>
+                            <li>Analysez les causes derrière vos situations</li>
+                            <li>Confiez le résultat final à Allah après avoir fait votre part</li>
+                        </ul>
+                        
+                        <h4 class="mt-4">Citations inspirantes</h4>
+                        <blockquote class="blockquote">
+                            <p>"Toute âme est l'otage de ce qu'elle a acquis." (Coran 74:38)</p>
+                        </blockquote>
+                    `
+                },
+                9: {
+                    title: "Loi du Détachement (Tafwīd)",
+                    content: `
+                        <h4>Explications approfondies</h4>
+                        <p>Le détachement ne signifie pas l'inaction, mais la confiance absolue en Allah après avoir fait de son mieux. Le Prophète (ﷺ) enseignait : "Si toute l'humanité se réunissait pour te causer un bien, elle ne pourrait te causer que ce qu'Allah a déjà écrit pour toi." (Tirmidhi). Cette loi libère de l'anxiété.</p>
+                        
+                        <h4 class="mt-4">Applications pratiques</h4>
+                        <ul>
+                            <li>Faites de votre mieux puis laissez aller le résultat</li>
+                            <li>Pratiquez le tawakkul (confiance en Allah) au quotidien</li>
+                            <li>Acceptez que le plan divin soit plus sage que vos désirs</li>
+                        </ul>
+                        
+                        <h4 class="mt-4">Citations inspirantes</h4>
+                        <blockquote class="blockquote">
+                            <p>"Et quiconque place sa confiance en Allah, Il lui suffit." (Coran 65:3)</p>
+                        </blockquote>
+                    `
+                },
+                10: {
+                    title: "Loi du Temps (Sabr + Divine Timing)",
+                    content: `
+                        <h4>Explications approfondies</h4>
+                        <p>Allah agit avec une parfaite précision temporelle. Le Coran dit : "Toute chose a son terme fixé." (13:38). La patience (sabr) est une vertu centrale en islam, souvent associée à la certitude (yaqin) que le timing divin est parfait.</p>
+                        
+                        <h4 class="mt-4">Applications pratiques</h4>
+                        <ul>
+                            <li>Pratiquez la patience active (sabr) dans l'attente</li>
+                            <li>Croyez que le retard n'est pas un refus</li>
+                            <li>Profitez du temps présent plutôt que de vous inquiéter du futur</li>
+                        </ul>
+                        
+                        <h4 class="mt-4">Citations inspirantes</h4>
+                        <blockquote class="blockquote">
+                            <p>"Ô vous qui avez cru! Cherchez secours dans l'endurance et la prière. Car Allah est avec ceux qui sont endurants." (Coran 2:153)</p>
+                        </blockquote>
+                    `
+                },
+                11: {
+                    title: "Loi de la Polarité (Épreuves et Bienfaits)",
+                    content: `
+                        <h4>Explications approfondies</h4>
+                        <p>Dans l'univers, tout a son opposé complémentaire : lumière/obscurité, joie/tristesse, etc. Le Coran dit : "Certes, avec la difficulté vient la facilité." (94:5). Cette loi nous enseigne que les épreuves contiennent toujours une sagesse cachée et un bien potentiel.</p>
+                        
+                        <h4 class="mt-4">Applications pratiques</h4>
+                        <ul>
+                            <li>Cherchez le bien dans chaque situation</li>
+                            <li>Acceptez les cycles naturels de la vie</li>
+                            <li>Souvenez-vous qu'après l'obscurité vient toujours la lumière</li>
+                        </ul>
+                        
+                        <h4 class="mt-4">Citations inspirantes</h4>
+                        <blockquote class="blockquote">
+                            <p>"Il se peut que vous détestiez une chose alors qu'elle est un bien pour vous, et il se peut que vous aimiez une chose alors qu'elle est un mal pour vous. Allah sait, alors que vous ne savez pas." (Coran 2:216)</p>
+                        </blockquote>
+                    `
+                },
+                12: {
+                    title: "Loi de l'Élévation par l'Épreuve",
+                    content: `
+                        <h4>Explications approfondies</h4>
+                        <p>Les épreuves sont des tests divins qui purifient, élèvent et rapprochent le croyant d'Allah. Le Prophète (ﷺ) a dit : "Rien n'atteint le musulman comme épreuve, maladie, souci, tristesse, nuisance ou peine, même une épine qui le pique, sans qu'Allah n'en efface pour cela certaines de ses fautes." (Bukhari)</p>
+                        
+                        <h4 class="mt-4">Applications pratiques</h4>
+                        <ul>
+                            <li>Face aux difficultés, recherchez la sagesse cachée et les leçons</li>
+                            <li>Développez la patience (sabr) et la persévérance</li>
+                            <li>Sachez qu'après chaque difficulté vient une facilité</li>
+                        </ul>
+                        
+                        <h4 class="mt-4">Citations inspirantes</h4>
+                        <blockquote class="blockquote">
+                            <p>"Certes, avec la difficulté vient la facilité. Oui, avec la difficulté vient la facilité." (Coran 94:5-6)</p>
+                        </blockquote>
+                    `
+                }
+            };
+            
+            // Modal functionality
+            const learnMoreButtons = document.querySelectorAll('.learn-more');
+            const lawModal = new bootstrap.Modal(document.getElementById('lawModal'));
+            const lawModalTitle = document.getElementById('lawModalTitle');
+            const lawModalBody = document.getElementById('lawModalBody');
+            
+            learnMoreButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const lawNumber = this.getAttribute('data-law');
+                    const law = lawsDetails[lawNumber];
+                    
+                    lawModalTitle.textContent = law.title;
+                    lawModalBody.innerHTML = law.content;
+                    
+                    lawModal.show();
+                });
+            });
+            
+            // Action buttons functionality
+            document.getElementById('infographic-btn').addEventListener('click', function() {
+                alert('Fonctionnalité à venir : Téléchargement de l\'infographie');
+            });
+            
+            document.getElementById('whatsapp-btn').addEventListener('click', function() {
+                alert('Fonctionnalité à venir : Partage sur WhatsApp');
+            });
+            
+            document.getElementById('pdf-btn').addEventListener('click', function() {
+                alert('Fonctionnalité à venir : Téléchargement du PDF');
+            });
+            
+            // Animate elements on scroll
+            const animateOnScroll = function() {
+                const elements = document.querySelectorAll('.fade-in');
+                
+                elements.forEach(element => {
+                    const elementPosition = element.getBoundingClientRect().top;
+                    const windowHeight = window.innerHeight;
+                    
+                    if (elementPosition < windowHeight - 100) {
+                        element.style.opacity = '1';
+                        element.style.transform = 'translateY(0)';
+                    }
+                });
+            };
+            
+            // Initial check
+            animateOnScroll();
+            
+            // Check on scroll
+            window.addEventListener('scroll', animateOnScroll);
+        });
+    </script>
 </body>
 </html>
